@@ -197,7 +197,7 @@ export default function Hero() {
       </div>
 
       {/* Conteúdo da Hero: relative; z-index 10 */}
-      <div className="relative z-10 flex flex-col justify-center flex-1 w-full pt-40 md:pt-48 pb-16 md:pb-20">
+      <div className="relative z-10 flex flex-col justify-center flex-1 w-full pt-40 md:pt-48 pb-16 md:pb-32">
         <div className="text-center px-6 max-w-5xl mx-auto">
           <motion.div 
             className="space-y-8 md:space-y-10"

@@ -6,8 +6,8 @@ import Image from 'next/image';
 export default function About() {
   return (
     <>
-      {/* Section: Nossa História (Dark Strip) */}
-      <section className="py-16 md:py-40 text-white relative z-20" id="sobre">
+      {/* Section: Nossa História (No background gradient here, it's wrapper driven) */}
+      <section className="py-16 md:py-32 text-white relative z-20" id="sobre">
         <div className="absolute inset-0 bg-glow opacity-5 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
           <motion.div

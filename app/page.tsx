@@ -15,7 +15,7 @@ import SectionDivider from '@/components/SectionDivider';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <div className="bg-dark-gradient relative">
+      <div className="bg-dark-gradient relative overflow-hidden">
         <Hero />
         
         <div className="relative z-30 -mt-[4rem] md:-mt-[5rem] mb-[2rem] md:mb-[5rem] w-full">
