@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       {/* Section: Nossa História (Dark Strip) */}
-      <section className="py-16 md:py-48 text-white relative overflow-hidden" id="sobre">
+      <section className="py-16 md:py-48 bg-dark-gradient text-white relative overflow-hidden" id="sobre">
         <div className="absolute inset-0 bg-glow opacity-5 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
           <motion.div
