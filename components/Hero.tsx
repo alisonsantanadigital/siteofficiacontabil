@@ -5,6 +5,7 @@ import { MessageCircle, ArrowRight, Menu, X, Check } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/site-config';
+import StatsBar from '@/components/StatsBar';
 
 export default function Hero() {
   const [scrolled, setScrolled] = useState(false);
@@ -181,23 +182,21 @@ export default function Hero() {
       </motion.div>
 
       {/* Background/overlay/divisor: absolute; z-index 0 */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0" style={{ maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)' }}>
-          <Image 
-            src="/escritorio-do-heroi.png"
-            alt="Escritório Officia Rocha"
-            fill
-            priority
-            className="object-cover zoom-bg opacity-50"
-            referrerPolicy="no-referrer"
-          />
-        </div>
+      <div className="absolute inset-0 z-0 bg-dark-gradient">
+        <Image 
+          src="/escritorio-do-heroi.png"
+          alt="Escritório Officia Rocha"
+          fill
+          priority
+          className="object-cover zoom-bg opacity-50 [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]"
+          referrerPolicy="no-referrer"
+        />
         <div className="absolute inset-0 bg-hero-overlay pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-glow opacity-40 blur-[120px] pointer-events-none" />
       </div>
 
       {/* Conteúdo da Hero: relative; z-index 10 */}
-      <div className="relative z-10 flex flex-col justify-center flex-1 w-full pt-40 md:pt-48 pb-16 md:pb-32">
+      <div className="relative z-10 flex flex-col justify-center flex-1 w-full pt-40 md:pt-48 pb-16 md:pb-20">
         <div className="text-center px-6 max-w-5xl mx-auto">
           <motion.div 
             className="space-y-8 md:space-y-10"
@@ -285,39 +284,38 @@ export default function Hero() {
                 transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 } 
               }
             }}
-            className="flex flex-col items-center justify-center gap-6 pt-6 w-full"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-3xl">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <a 
-                href={`${siteConfig.whatsapp.link}?text=${encodeURIComponent('Olá, gostaria de falar com a Unidade São Paulo sobre a gestão da minha empresa e obter mais informações.')}`} 
+                href={`${siteConfig.whatsapp.link}?text=${encodeURIComponent('Olá, gostaria de falar com a Unidade São Paulo e obter mais informações.')}`} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 bg-secondary hover:bg-white hover:text-primary text-white px-6 py-5 rounded-full text-[13px] md:text-[14px] font-bold uppercase tracking-widest transition-all duration-500 shadow-glow group relative overflow-hidden hover:scale-105"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-secondary hover:bg-white hover:text-primary text-white px-8 py-4 rounded-full text-[13px] sm:text-[14px] font-bold uppercase tracking-widest transition-all duration-500 shadow-glow group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer-fast" />
-                <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
-                  <MessageCircle className="w-5 h-5 md:w-6 md:h-6 shrink-0" />
-                  <span className="truncate">WhatsApp • Unidade São Paulo</span>
+                <span className="relative z-10 flex items-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Unidade São Paulo
                 </span>
               </a>
-
               <a 
-                href={`${siteConfig.whatsapp.link}?text=${encodeURIComponent('Olá, gostaria de falar com a Unidade Capivari sobre a gestão da minha empresa e obter mais informações.')}`} 
+                href={`${siteConfig.whatsapp.link}?text=${encodeURIComponent('Olá, gostaria de falar com a Unidade Capivari e obter mais informações.')}`} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 bg-secondary hover:bg-white hover:text-primary text-white px-6 py-5 rounded-full text-[13px] md:text-[14px] font-bold uppercase tracking-widest transition-all duration-500 shadow-glow group relative overflow-hidden hover:scale-105"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-secondary/80 hover:bg-white hover:text-primary text-white border border-white/10 px-8 py-4 rounded-full text-[13px] sm:text-[14px] font-bold uppercase tracking-widest transition-all duration-500 shadow-glow group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer-fast" />
-                <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
-                  <MessageCircle className="w-5 h-5 md:w-6 md:h-6 shrink-0" />
-                  <span className="truncate">WhatsApp • Unidade Capivari</span>
+                <span className="relative z-10 flex items-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Unidade Capivari
                 </span>
               </a>
             </div>
 
             <a 
               href="#servicos"
-              className="inline-flex items-center justify-center gap-2 text-white/80 hover:text-white text-[15px] font-semibold tracking-wide transition-colors group mt-2"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white/80 hover:text-white text-[15px] font-semibold tracking-wide transition-colors group"
             >
               Conheça nossas soluções
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -325,6 +323,11 @@ export default function Hero() {
           </motion.div>
         </motion.div>
         </div>
+      </div>
+
+      {/* Cards de estatísticas: relative; z-index 20 */}
+      <div className="relative z-20 w-full pb-12 pt-6">
+        <StatsBar />
       </div>
     </section>
   );
